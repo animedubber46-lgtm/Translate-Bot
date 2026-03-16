@@ -71,7 +71,7 @@ async def post_init(application: Application) -> None:
 
 
 def main() -> None:
-    token = os.environ.get("BOT_TOKEN")
+    token = os.environ.get("8286971022:AAHPjfI9MZHMoXV2MH2n2SOTJCTOmy9vPNs")
     if not token:
         raise RuntimeError("BOT_TOKEN environment variable is not set.")
 
