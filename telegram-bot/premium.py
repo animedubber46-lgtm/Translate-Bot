@@ -24,7 +24,7 @@ _client: MongoClient | None = None
 def _get_collection() -> Collection:
     global _client
     if _client is None:
-        uri = os.environ.get("MONGODB_URI")
+        uri = os.environ.get("mongodb+srv://sakshamranjan7:8wBCaYilCTlgdNV3@cluster0.h184m7m.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
         if not uri:
             raise RuntimeError("MONGODB_URI environment variable is not set.")
         _client = MongoClient(uri, serverSelectionTimeoutMS=5000)
