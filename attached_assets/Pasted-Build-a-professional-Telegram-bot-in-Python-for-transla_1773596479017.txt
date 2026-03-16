@@ -1,0 +1,87 @@
+Build a professional Telegram bot in Python for translating uploaded .srt subtitle files into natural Hinglish and sending the translated .srt file back to the user.
+
+Main objective:
+The bot should act like an anime/movie subtitle translator that converts English subtitle dialogues into Indian-style natural Hinglish written in Roman script, while preserving the original .srt subtitle structure exactly.
+
+Functional requirements:
+- Accept .srt file from Telegram user.
+- Validate file extension and file content.
+- Parse .srt blocks safely.
+- Keep subtitle index numbers unchanged.
+- Keep timestamps unchanged.
+- Translate only subtitle dialogue text.
+- Preserve line breaks inside subtitle text as much as possible.
+- Reconstruct a valid .srt file after translation.
+- Send translated .srt file back to the same user.
+
+Translation style:
+- Natural Hinglish in Roman script.
+- Easy to understand.
+- Good for anime dubbing / entertainment subtitles.
+- Emotional and expressive where needed.
+- Avoid robotic word-by-word translation.
+- Keep common English words when they sound better in Hinglish.
+- Preserve names, places, powers, attacks, honorifics, anime terms, and branded terms wherever appropriate.
+- Example style:
+  - “I can’t lose here.” → “Main yahan haar nahi sakta.”
+  - “Let’s go!” → “Chalo, let’s go!”
+  - “You idiot!” → “Tum idiot ho kya!”
+  - “I’ll protect everyone.” → “Main sabko protect karunga.”
+
+Telegram bot behavior:
+- /start → welcome message
+- /help → instructions
+- When file is received:
+  1. Download file
+  2. Check if valid .srt
+  3. Notify user: “Subtitle file mil gayi, translation start ho rahi hai...”
+  4. Process file
+  5. Translate text blocks
+  6. Save translated file
+  7. Send translated file with caption: “Yeh rahi aapki Hinglish translated subtitle file.”
+
+Code requirements:
+- Use Python
+- Prefer Pyrogram or python-telegram-bot
+- Write modular code
+- Use async where appropriate
+- Use environment variable BOT_TOKEN
+- Use temporary file storage
+- Use UTF-8
+- Add exception handling
+- Add logs
+- Provide production-ready structure
+
+Must include:
+- bot.py or main.py
+- requirements.txt
+- .env example
+- step-by-step run instructions
+
+Implementation details:
+- Create separate functions/classes for:
+  - subtitle parsing
+  - text translation
+  - subtitle rebuilding
+  - Telegram handlers
+- The translation function should be replaceable:
+  - one dummy translator for testing
+  - one API-ready translator wrapper for future use
+- Ensure that if subtitle text spans multiple lines, translation keeps it readable and valid in .srt format.
+
+Extra features:
+- /mode command to switch between:
+  - normal
+  - anime dub
+  - casual
+- /sample command to show an example translation
+- Add maximum file size checks
+- Add support for reply messages and user-friendly error texts
+
+Important constraints:
+- Never break .srt numbering or timestamps.
+- Never translate sequence numbers or timecodes.
+- Output must always remain a valid .srt file.
+- Bot should be easy to deploy on VPS, Render, or Heroku.
+
+Now generate the full working bot code with all files.
