@@ -253,7 +253,7 @@ class GeminiTranslator(BatchedAITranslator):
                 "google-genai package is not installed. Run: pip install google-genai"
             ) from exc
 
-        api_key = os.environ.get("GEMINI_API_KEY")
+        api_key = os.environ.get("AIzaSyDSKCgVpBi6I9xR48pMDeCPqD4jaCx6DnA")
         if not api_key:
             raise RuntimeError("GEMINI_API_KEY environment variable is not set.")
 
@@ -307,7 +307,7 @@ class OpenAITranslator(BatchedAITranslator):
         except ImportError as exc:
             raise RuntimeError("openai package is not installed.") from exc
 
-        api_key = os.environ.get("OPENAI_API_KEY")
+        api_key = os.environ.get("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")
         if not api_key:
             raise RuntimeError("OPENAI_API_KEY environment variable is not set.")
         self._client = OpenAI(api_key=api_key)
@@ -365,7 +365,7 @@ class GroqTranslator(BatchedAITranslator):
                 "groq package is not installed. Run: pip install groq"
             ) from exc
 
-        api_key = os.environ.get("GROQ_API_KEY")
+        api_key = os.environ.get("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")
         if not api_key:
             raise RuntimeError("GROQ_API_KEY environment variable is not set.")
 
